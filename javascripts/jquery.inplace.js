@@ -79,6 +79,7 @@ jQuery.fn.editInPlace = function(options) {
 		select_options: "",
 		textarea_cols:  "25",
 		textarea_rows:  "10",
+		datepicker: '',
 		bg_over: "#ffc",
 		bg_out:  "transparent",
 		saving_text:   "Saving...",
@@ -170,7 +171,7 @@ jQuery.fn.editInPlace = function(options) {
 				}
 				else if(settings.field_type == "text")
 				{
-					var use_field_type = '<input type="text" name="inplace_value" class="inplace_field" value="' +
+					var use_field_type = '<input type="text" id="inplace_field" name="inplace_value" class="inplace_field" value="' +
 											jQuery(this).text().trim().escape_html() + '" />';
 				}
 				else if(settings.field_type == "select")
@@ -191,6 +192,10 @@ jQuery.fn.editInPlace = function(options) {
 				//insert the new in place form after the element they click, then empty out the original element
 				jQuery(this).html('<form class="inplace_form" style="display: inline; margin: 0; padding: 0;">' +
 									use_field_type + ' ' + buttons_code + '</form>');
+									
+				if (settings.datepicker == "datepicker"){
+	    			$('#inplace_field').datepicker({ yearRange: '1900:2007', dateFormat: "MM d, yy", defaultDate: new Date(1980, 1 - 1, 1) });
+				}				
 
 			}//END- if(!editing) -END
 

@@ -46,6 +46,7 @@ module InPlaceMacrosHelper
       options[:select_options].join(',') : options[:select_options]) + "'" if options[:field_type].to_s == 'select'
     js_options['textarea_cols'] = (options[:textarea_cols] || 25).to_i if options[:field_type].to_s == 'textarea'
     js_options['textarea_rows'] = (options[:textarea_rows] || 10).to_i if options[:field_type].to_s == 'textarea'
+    js_options['datepicker'] = "'" + options[:datepicker].to_s + "'" if options[:datepicker]
     js_options['bg_over'] = "'" + options[:bg_over] + "'" if options[:bg_over]
     js_options['bg_out'] = "'" + options[:bg_out] + "'" if options[:bg_out]
     js_options['saving_text'] = "'" + options[:saving_text] + "'" if options[:saving_text] 
