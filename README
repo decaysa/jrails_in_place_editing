@@ -1,3 +1,7 @@
+Added datepicker support:
+
+	you can give the in_place_editor_options hash an extra option :datepicker => 'datepicker'
+
 Fixed the following lines of code in jrails_in_place_macros_helper:
 
     <code>
