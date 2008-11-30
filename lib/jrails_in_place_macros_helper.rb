@@ -43,7 +43,7 @@ module InPlaceMacrosHelper
     end
     js_options['field_type'] = "'" + options[:field_type] + "'" if options[:field_type]
     js_options['select_options'] = "'" + (options[:select_options].is_a?(Array)?
-      options[:select_options].join(',') : options[:select_options]) + "'" if js_options[:options].to_s == 'select'
+      options[:select_options].join(',') : options[:select_options]) + "'" if options[:field_type].to_s == 'select'
     js_options['textarea_cols'] = (options[:textarea_cols] || 25).to_i if options[:field_type].to_s == 'textarea'
     js_options['textarea_rows'] = (options[:textarea_rows] || 10).to_i if options[:field_type].to_s == 'textarea'
     js_options['bg_over'] = "'" + options[:bg_over] + "'" if options[:bg_over]

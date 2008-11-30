@@ -1,3 +1,17 @@
+Fixed the following lines of code in jrails_in_place_macros_helper:
+
+    <code>
+	js_options['select_options'] = "'" + (options[:select_options].is_a?(Array)?
+      options[:select_options].join(',') : options[:select_options]) + "'" if js_options[:options].to_s == 'select'
+    <code>
+      
+      to 
+    
+    <code>
+	js_options['select_options'] = "'" + (options[:select_options].is_a?(Array)?
+      options[:select_options].join(',') : options[:select_options]) + "'" if options[:field_type].to_s == 'select'
+	<code>
+
 JrailsInPlaceEditing
 ====================
 
